@@ -29,6 +29,15 @@ function esd_render_view () {
 	);
 
 	$skills = new WP_Query($args);
+	$total_score = 0;
+	$score_average = 0;
+
+	foreach ($skills->get_posts() as $skill) {
+		$total_score += get_post_meta( $skill->ID, 'esd_skill_result', false )[0];
+	}
+
+	$score_average = round($total_score / (int) count($skills->get_posts()));
+
 	$esd_content = '
 		<!-- Start of ESD - Exam Score Displayer section -->
 	    <div id="esd-main">
@@ -39,8 +48,7 @@ function esd_render_view () {
 	        <div class="content">
 	          <div class="rounded-graph-container">
 	            <div class="rounded-graph">
-	              <!-- <h2>44%</h2> -->
-	              <div class="chart" id="graph" data-percent="44"></div>
+	              <div class="chart" id="graph" data-percent="'.$score_average.'"></div>
 	            </div>
 	          </div>
 
