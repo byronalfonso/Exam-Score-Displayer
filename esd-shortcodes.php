@@ -37,6 +37,7 @@ function esd_render_view () {
 	}
 
 	$score_average = round($total_score / (int) count($skills->get_posts()));
+	$score_status = ($score_average > 50) ? 'passed' : 'fail';
 
 	$esd_content = '
 		<!-- Start of ESD - Exam Score Displayer section -->
@@ -55,7 +56,7 @@ function esd_render_view () {
 	          <div class="status-container">
 	            <div class="status">
 	              <h2>STATUS: </h2>
-	              <p class="val">FAIL</p>
+	              <p class="val '.$score_status.'">'.$score_status.'</p>
 	              <a href="">Change</a>
 	            </div>
 
