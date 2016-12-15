@@ -1,5 +1,12 @@
 <?php
+/*
+	Exam Score Display - Short Code
+		- Enqueuing of styles and scripts
+		- This is where the shortcode [esd_view] is declared and handled.
+		- Ajax handler for fetching the breakdown of skill post type data.
+*/
 
+// Enqueue styles and scripts for ESD.
 function register_esd_scripts () {
     wp_register_style('esd-style', plugins_url('css/style.css', __FILE__));
     wp_register_script('esd-script', plugins_url('js/main.js', __FILE__));
@@ -10,6 +17,7 @@ function register_esd_scripts () {
 
 add_action('init', 'register_esd_scripts');
 
+// Shortcode handler function
 function esd_render_view () {
 	
 	wp_enqueue_script("esd-script");
@@ -27,10 +35,8 @@ function esd_render_view () {
 	      
 	      <!-- #results -->
 	      <div id="esd-results" class="section esd-results">
-	        <h1>Results</h1>
-	        
+	        <h1>Results</h1>	        
 	        <div class="content">
-
 	          <div class="rounded-graph-container">
 	            <div class="rounded-graph">
 	              <!-- <h2>44%</h2> -->
@@ -53,15 +59,13 @@ function esd_render_view () {
 	              </p>
 	            </div>
 	          </div>
-
-	        </div>   
-
+	        </div>
 	      </div>
 	      
 	      <!-- #breakdown -->
 	      <div id="esd-breakdown" class="section esd-breakdown">
 	        <h1>Breakdown</h1>			
-			<div><button id="esd-show-exam-results">Load Exam Results</button></div>
+			<div><button id="esd-show-exam-results">Load Exam Breakdown</button></div>
 			<div id="esd-loading-icon" style="display:none;text-align:center">
 				<img src="'. plugins_url('/images/loading.svg', __FILE__) .'" alt="loading icon" width="40px" height="40px">
 			</div>
@@ -80,14 +84,12 @@ function esd_render_view () {
 	      </div>
 
 	    </div>
-	    <!-- End of ESD - Exam Score Displayer section -->
-	';
+	    <!-- End of ESD - Exam Score Displayer section -->';
 	
     return $esd_content;
 }
 
 add_shortcode('esd_view', 'esd_render_view');
-
 
 /* Ajax Handler for this Shortcode */
 function esd_fetch_skills_handler(){
@@ -99,8 +101,7 @@ function esd_fetch_skills_handler(){
 	);
 
 	$skills = new WP_Query($args);
-	$skill_meta = array();
-  	
+	$skill_meta = array(); 	
 
 	foreach ($skills->get_posts() as $skill) {
 		$skill_meta['skills'][] = array(
@@ -108,7 +109,6 @@ function esd_fetch_skills_handler(){
 			'result' => get_post_meta( $skill->ID, 'esd_skill_result', false )[0]
 		);
 	}
-
 
 	wp_send_json_success($skill_meta);
 
@@ -118,23 +118,3 @@ function esd_fetch_skills_handler(){
 
 add_action('wp_ajax_nopriv_esd_fetch_skills', 'esd_fetch_skills_handler');
 add_action('wp_ajax_esd_fetch_skills', 'esd_fetch_skills_handler');
-
-
-/*
-foreach ($skills->get_posts() as $skill) {
-
-	$skill_name = get_post_meta( $skill->ID, 'esd_skill_name', false );
-	$skill_result = get_post_meta( $skill->ID, 'esd_skill_result', false );
-
-	$esd_content .= '<li>
-            <span class="label">'.$skill_name[0].'</span>
-            <span class="bar">
-              <svg aria-labelledby="title desc" role="img">
-                <rect width="100%" x="0" y="0"></rect>
-              </svg> 
-            </span>
-            <span class="score">'.$skill_result[0].'</span>
-          </li>';
-}
-*/
-

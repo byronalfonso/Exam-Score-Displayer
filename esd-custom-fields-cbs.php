@@ -1,4 +1,8 @@
 <?php
+/*
+	Exam Score Display - Metabox Callback Functions
+		- This is where all the call back functions for meta boxes declaration are stored.
+*/
 
 // Call back function for the Results metabox (esd_meta_results)
 function esd_meta_skills_cb( $post ){

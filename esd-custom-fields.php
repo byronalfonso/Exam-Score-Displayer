@@ -44,15 +44,3 @@ function esd_meta_save($post_id){
 }
 
 add_action('save_post', 'esd_meta_save');
-
-
-
-
-
-
-
-
-
-
-
-
