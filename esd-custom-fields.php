@@ -33,6 +33,10 @@ function esd_meta_save($post_id){
 		return;
 	}
 
+	if ( !is_numeric(sanitize_text_field($_POST['esd_skill_result'])) || sanitize_text_field($_POST['esd_skill_result']) > 100 || sanitize_text_field($_POST['esd_skill_result']) < 0) {
+		return;
+	}
+
 	// Results metabox saving
 	if ( isset($_POST['esd_skill_name']) ) {
 		update_post_meta( $post_id, 'esd_skill_name', sanitize_text_field($_POST['esd_skill_name']) );
