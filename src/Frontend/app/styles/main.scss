@@ -1,0 +1,60 @@
+/* 
+  Styles for the whole Exam Score Displayer section   
+*/
+
+/* Reset some stuff */
+#esd-main{  
+  h1, h2, h3, p{
+    margin:0;
+    padding:0;
+  }
+}
+
+.esd-main-clear{
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+#esd-main{  
+  width:1200px;
+  height:auto;
+  max-width:100%;
+  margin:0 auto; 
+  /* base font size */
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  padding:31px 0;
+  
+  &:after {
+    @extend .esd-main-clear;
+  }
+
+  .section{
+    /*width:29.16666666666667%;*/
+    width:100%;
+    max-width:352px;
+    float:left;
+    margin-left:1.75%;
+    padding: 31px 1.3333333333333334%;
+    
+    h1{
+      color:#848484;
+      font-size:1em;     
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+  }
+
+  .section:first-child{
+    margin-left:0;
+  }
+}
+
+@import 'results';
+@import 'breakdown';
+@import 'history';
+@import 'responsive';

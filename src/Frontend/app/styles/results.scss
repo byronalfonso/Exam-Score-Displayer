@@ -1,0 +1,90 @@
+/* 
+	#RESULTS Section
+*/
+
+@import 'graph';
+
+#esd-results{
+
+	&:after {
+	  @extend .esd-main-clear;
+	}
+
+	.content{
+	     
+	}
+
+	.rounded-graph-container{
+	  width:45%;
+	  float:left;
+
+	  .rounded-graph{
+	    width:116px;
+	    height:115px;
+	  }
+
+	}
+
+	.status-container{
+	  width:55%;
+	  height:85px;
+	  float:left;
+	  color:#848484;
+
+	  .status, .time{
+	    &:after {
+	      @extend .esd-main-clear;
+	    }
+	    height: 24px;
+	    line-height:24px;
+	    display:block;
+	    float:none;
+	  }
+	  
+	  h2, p, a{
+	    float:left;
+	    font-size:.75em;
+	  }
+
+	  .status{
+	    &:after {
+	      @extend .esd-main-clear;
+	    }
+	    margin-bottom:24px;
+
+	    .val{
+	      height: 22px;
+	      line-height: 22px;
+	      display:block;
+	      background:#eca33a;
+	      border:1px solid #e99418;
+	      color:#fff;
+	      border-radius:5px;
+	      font-size:.625em;
+	      padding:0 5px;
+	      font-weight:bold;
+	      margin:0 10px 0 5px;
+	    }
+
+	    a{
+	      color:#007bb8;
+	      text-decoration:none;
+	    }
+	  }
+
+	  .time{
+	    
+	    line-height: 15px;
+
+	    p{
+	      margin-left:15px; 
+	      font-weight:bold;
+
+	      span{
+	        font-weight:normal;            
+	      }
+	    }        
+	  }	  
+
+	}
+}

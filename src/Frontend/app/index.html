@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+
+    <!-- Start of ESD - Exam Score Displayer section -->
+    <div id="esd-main" class="esd-main">
+      <div class="inner">
+      <!-- #results -->
+      <div id="esd-results" class="section esd-results">
+        <h1>Results</h1>
+        
+        <div class="content">
+
+          <div class="rounded-graph-container">
+            <div class="rounded-graph">
+              <!-- <h2>44%</h2> -->
+              <div class="chart" id="graph" data-percent="44"></div>
+            </div>
+          </div>
+
+          <div class="status-container">
+            <div class="status">
+              <h2>STATUS: </h2>
+              <p class="val">FAIL</p>
+              <a href="">Change</a>
+            </div>
+
+            <div class="time">
+              <h2>TIME: </h2>
+              <p class="val">
+                2h 2min<br/>
+                <span>(of max 1h 50min)</span>
+              </p>
+            </div>
+          </div>
+
+        </div>   
+
+      </div>
+      
+      <!-- #breakdown -->
+      <div id="esd-breakdown" class="section esd-breakdown">
+        <h1>Breakdown</h1>
+
+        <ul class="skills">
+          <li>
+            <span class="label">Numerical reasoning</span>
+            <span class="bar">
+              <svg aria-labelledby="title desc" role="img">
+                <rect width="100%" x="0" y="0"></rect>
+              </svg> 
+            </span>
+            <span class="score">100%</span>
+          </li>
+
+          <li>
+            <span class="label">SQL</span>
+            <span class="bar">
+              <svg aria-labelledby="title desc" role="img">
+                <rect width="50%" x="0" y="0"></rect>
+              </svg>
+            </span>
+            <span class="score">50%</span>
+          </li>
+
+          <li>
+            <span class="label">PHP</span>
+            <span class="bar">
+              <svg aria-labelledby="title desc" role="img">
+                <rect width="0%" x="0" y="0"></rect>
+              </svg>
+            </span>
+            <span class="score">0%</span>
+          </li>
+
+          <li>
+            <span class="label">HTML/CSS</span>
+            <span class="bar">
+              <svg aria-labelledby="title desc" role="img">
+                <rect width="100%" x="0" y="0"></rect>
+              </svg>
+            </span>
+            <span class="score">100%</span>
+          </li>
+
+          <li>
+            <span class="label">Javascript</span>
+            <span class="bar">
+              <svg aria-labelledby="title desc" role="img">
+                <rect width="3%" x="0" y="0"></rect>
+              </svg>
+            </span>
+            <span class="score">3%</span>
+          </li>
+
+          <li>
+            <span class="label">Wordpress</span>
+            <span class="bar">
+              <svg aria-labelledby="title desc" role="img">
+                <rect width="33%" x="0" y="0"></rect>
+              </svg>
+            </span>
+            <span class="score">33%</span>
+          </li>
+        </ul>
+
+      </div>
+      
+      <!-- #history -->
+      <div id="esd-history" class="section esd-history">
+        <h1>History</h1>
+        <p>
+          <a href="">Invitation email</a> on Aug 15 <br />
+          Candidate started the test on Aug 15 <br />
+          Candidate completed the test on Aug 15
+        </p>
+      </div>
+    </div>
+    </div>
+    <!-- End of ESD - Exam Score Displayer section -->
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
