@@ -18,3 +18,4 @@ $dir = plugin_dir_path(__FILE__);
 
 require_once $dir . 'esd-cpt.php';
 require_once $dir . 'esd-custom-fields.php';
+require_once $dir . 'esd-shortcodes.php';

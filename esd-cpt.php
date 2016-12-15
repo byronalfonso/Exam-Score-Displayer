@@ -6,8 +6,8 @@
 
 function esd_register_custom_post_types(){
 
-	$singular = 'Exam';
-	$plural = 'Exams';
+	$singular = 'Skill';
+	$plural = 'Skills';
 	
 	$labels = array(
 		'name' 					=> $plural,
@@ -26,7 +26,7 @@ function esd_register_custom_post_types(){
 	);
 
 	$rewrite_options = array(
-		'slug' 			=> 'exams',
+		'slug' 			=> 'skills',
 		'with_front' 	=> true,
 		'pages' 		=> true,
 		'feeds' 		=> false
@@ -57,7 +57,7 @@ function esd_register_custom_post_types(){
 		'rewrite'				=> $rewrite_options		
 	);
 
-	register_post_type( 'Exam', $args );
+	register_post_type( 'Skill', $args );
 }
 
 add_action('init', 'esd_register_custom_post_types');
