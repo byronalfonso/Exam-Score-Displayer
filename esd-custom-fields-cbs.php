@@ -35,12 +35,9 @@ function esd_meta_skills_cb( $post ){
 					value="<?php if (! empty($esd_stored_meta['esd_skill_result']) ) echo esc_attr($esd_stored_meta['esd_skill_result'][0]) ?>" 
 					placeholder="Please enter the skill exam score in percent">
 					<?php
-						if ( isset($_POST['esd_skill_result']) && 
-							(!is_numeric(sanitize_text_field($_POST['esd_skill_result'])) || 
-							sanitize_text_field($_POST['esd_skill_result']) > 100 || 
-							sanitize_text_field($_POST['esd_skill_result']) < 0)) {
+						if ( isset($_GET['field_name']) && isset($_GET['status']) && $_GET['field_name'] == 'esd_skill_result' && $_GET['status'] == '1') {
 					?>
-						<span style="background: red;color:#fff">Please enter a valid number from 0 - 100 only</span>
+						<div style="color:red">Please enter a valid number from 0 - 100 only</div>
 					<?php
 						}
 					?>

@@ -34,6 +34,13 @@ function esd_meta_save($post_id){
 	}
 
 	if ( !is_numeric(sanitize_text_field($_POST['esd_skill_result'])) || sanitize_text_field($_POST['esd_skill_result']) > 100 || sanitize_text_field($_POST['esd_skill_result']) < 0) {
+
+		$errors = array(
+			'field_name' => 'esd_skill_result', 
+			'error_status' => '1'
+		);
+
+		update_option('esd_errors', $errors);
 		return;
 	}
 
@@ -48,3 +55,32 @@ function esd_meta_save($post_id){
 }
 
 add_action('save_post', 'esd_meta_save');
+
+function update_post_redirect($location){
+    $errors = get_option('esd_errors');
+
+    if($errors)
+        $location .= '&errors=1&field_name='.$errors['field_name'].'&status='.$errors['error_status'];
+    return $location;
+}
+
+add_filter('redirect_post_location', 'update_post_redirect');
+
+// Display any errors
+function esd_admin_notice_handler() {
+
+    $errors = get_option('esd_errors');
+
+    if($errors) {
+        echo '<div class="error"><p>Error: You have entered an invalid field value</p></div>';
+    }   
+
+}
+add_action( 'admin_notices', 'esd_admin_notice_handler' );
+
+// Clear any errors
+function esd_clear_errors() {
+    update_option('esd_errors', false);
+}
+
+add_action( 'admin_footer', 'esd_clear_errors' );
