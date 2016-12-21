@@ -33,7 +33,10 @@ function esd_meta_save($post_id){
 		return;
 	}
 
-	if ( !is_numeric(sanitize_text_field($_POST['esd_skill_result'])) || sanitize_text_field($_POST['esd_skill_result']) > 100 || sanitize_text_field($_POST['esd_skill_result']) < 0) {
+	if ( isset($_POST['esd_skill_result']) && 
+		(!is_numeric(sanitize_text_field($_POST['esd_skill_result'])) || 
+		sanitize_text_field($_POST['esd_skill_result']) > 100 || 
+		sanitize_text_field($_POST['esd_skill_result']) < 0) ) {
 
 		$errors = array(
 			'field_name' => 'esd_skill_result', 

@@ -70,7 +70,7 @@ var loadExamResults = function(skills){
 	skills.forEach(function(skill){
 		listItem += '<li>';
 			listItem += '<span class="label">'+skill.name+'</span>';
-			listItem += '<span class="bar"><svg aria-labelledby="title desc" role="img"><rect width="100%" x="0" y="0"></rect></svg></span>';
+			listItem += '<span class="bar"><svg aria-labelledby="title desc" role="img"><rect width="'+skill.result+'%" x="0" y="0"></rect></svg></span>';
 			listItem += '<span class="score">'+skill.result+'</span>';
 		listItem += '</li>';
 	});
