@@ -1,8 +1,8 @@
-##Development Dependencies: (mostly for the front-end only)
+##Development Dependencies:
 1. Npm.
 2. Gulp.
 3. Google Web Starter Kit.
-4. Of course PHP and Wordpress.
+4. PHP and Wordpress.
 
 ##Installation:
 1. Download the zip file.
