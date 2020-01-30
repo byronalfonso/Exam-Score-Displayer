@@ -3,13 +3,4 @@
 *.scss linguist-vendored
 *.js linguist-vendored
 *.php linguist-vendored
-
-#*.js linguist-detectable=true
-#*.php linguist-detectable=true
-#*.css linguist-detectable=true
-#*.html linguist-detectable=true
-
-#*.js linguist-language=Javascript
-#*.php linguist-language=PHP
-#*.css linguist-language=CSS
-#*.html linguist-language=HTML
+./* linguist-vendored
