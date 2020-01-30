@@ -1,3 +1,11 @@
-*.php linguist-detectable=true
-*.php linguist-language=PHP
 src/* linguist-vendored
+
+*.php linguist-detectable=true
+*.js linguist-detectable=true
+*.php linguist-detectable=true
+*.css linguist-detectable=true
+*.php linguist-language=PHP
+*.js linguist-language=Javascript
+*.php linguist-language=PHP
+*.css linguist-language=CSS
+*.html linguist-language=HTML
